@@ -8,3 +8,5 @@ export * from './rollout/undo.controller';
 export * from './scale/scale.controller';
 export * from './status/condition.component';
 export * from './status/status.component';
+export * from './wizard/BasicSettings';
+export * from './ManifestSource';

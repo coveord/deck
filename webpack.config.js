@@ -62,7 +62,7 @@ function configure(env, webpackOpts) {
       path: path.join(__dirname, 'build', 'webpack', process.env.SPINNAKER_ENV || ''),
       filename: '[name].js',
     },
-    devtool: IS_PRODUCTION ? 'source-map' : 'eval',
+    devtool: 'eval-source-map', // IS_PRODUCTION ? 'source-map' : 'eval',
     optimization: {
       splitChunks: {
         chunks: 'all', // enables splitting of both initial and async chunks

@@ -32,6 +32,7 @@ export class YamlEditor extends React.Component<IYamlEditorProps> {
 
   public calculateErrors = (value: string): Annotation[] => {
     try {
+      ``;
       loadAll(value, null);
     } catch (e) {
       if (e instanceof YAMLException) {
