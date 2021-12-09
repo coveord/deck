@@ -15,17 +15,17 @@ import {
 } from '@spinnaker/core';
 import { IManifestBindArtifact, ManifestBindArtifactsSelector, ManifestSource } from '@spinnaker/kubernetes';
 
-export interface ITerragruntInnerJobConfigProps extends IStageConfigProps {
+export interface ITerraformInnerJobConfigProps extends IStageConfigProps {
   innerJobName: string;
   prettyInnerJobName: string;
 }
 
-export interface ITerragruntInnerJobConfigState {
+export interface ITerraformInnerJobConfigState {
   textManifest?: string;
 }
 
-export class TerragruntInnerJobConfig extends React.Component<ITerragruntInnerJobConfigProps> {
-  public state: ITerragruntInnerJobConfigState = {};
+export class TerraformInnerJobConfig extends React.Component<ITerraformInnerJobConfigProps> {
+  public state: ITerraformInnerJobConfigState = {};
 
   private readonly excludedManifestArtifactTypes = [
     ArtifactTypePatterns.DOCKER_IMAGE,

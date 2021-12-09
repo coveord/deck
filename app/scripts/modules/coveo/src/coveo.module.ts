@@ -3,7 +3,7 @@ import { module } from 'angular';
 import { CloudProviderRegistry } from '@spinnaker/core';
 
 import './help/coveo.help';
-import './pipelines/stages/terragrunt/terragruntStage';
+import './pipelines/stages/terraform/terraformStage';
 
 export const COVEO_MODULE = 'spinnaker.coveo';
 

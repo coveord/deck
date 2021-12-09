@@ -2,14 +2,14 @@ import React from 'react';
 
 import { AccountService, CheckboxInput, IAccount, IStageConfigProps, StageConfigField } from '@spinnaker/core';
 import { ManifestBasicSettings } from '@spinnaker/kubernetes';
-import { TerragruntInnerJobConfig } from './terragruntInnerJobConfig';
+import { TerraformInnerJobConfig } from './terraformInnerJobConfig';
 
-export interface ITerragruntStageConfigState {
+export interface ITerraformStageConfigState {
   credentials: IAccount[];
 }
 
-export class TerragruntStageConfig extends React.Component<IStageConfigProps> {
-  public state: ITerragruntStageConfigState = {
+export class TerraformStageConfig extends React.Component<IStageConfigProps> {
+  public state: ITerraformStageConfigState = {
     credentials: [],
   };
   private readonly PLAN_JOB = { key: 'terraformPlan', prettyName: 'Plan' };
@@ -53,20 +53,20 @@ export class TerragruntStageConfig extends React.Component<IStageConfigProps> {
           accounts={this.state.credentials}
           onAccountSelect={this.onAccountChanged}
         />
-        <StageConfigField label="Don't require approval" helpKey="coveo.terragrunt.autoapproved">
+        <StageConfigField label="Don't require approval" helpKey="coveo.terraform.autoapproved">
           <CheckboxInput
             checked={stage.autoApproved}
             onChange={(e: any) => this.onAutoApprovedChanged(e.target.checked)}
           />
         </StageConfigField>
         <h3>Plan Configuration</h3>
-        <TerragruntInnerJobConfig
+        <TerraformInnerJobConfig
           innerJobName={this.PLAN_JOB.key}
           prettyInnerJobName={this.PLAN_JOB.prettyName}
           {...props}
         />
         <h3>Apply Configuration</h3>
-        <TerragruntInnerJobConfig
+        <TerraformInnerJobConfig
           innerJobName={this.APPLY_JOB.key}
           prettyInnerJobName={this.APPLY_JOB.prettyName}
           {...props}
