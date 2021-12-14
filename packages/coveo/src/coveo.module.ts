@@ -8,7 +8,7 @@ import './pipelines/stages/terraform/terraformStage';
 export const COVEO_MODULE = 'spinnaker.coveo';
 
 module(COVEO_MODULE, []).config(() => {
-  CloudProviderRegistry.registerProvider('coveo', {
-    name: 'Coveo',
+  CloudProviderRegistry.registerProvider('titus', {
+    name: 'Titus',
   });
 });

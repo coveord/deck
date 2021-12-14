@@ -85,6 +85,7 @@
     "packages/azure",
     "packages/cloudfoundry",
     "packages/core",
+    "packages/coveo",
     "packages/dcos",
     "packages/docker",
     "packages/ecs",

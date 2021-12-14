@@ -21,6 +21,7 @@ ModuleDeps () {
       presentation) echo "presentation";;
       titus) echo "amazon docker core" ;;
       tencentcloud) echo "core";;
+      coveo) echo "core kubernetes";;
       *)
         if [[ ! -d "../packages/$1" ]] ; then
           echo "Unknown module: $1"

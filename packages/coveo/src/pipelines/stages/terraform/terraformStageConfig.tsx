@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { AccountService, CheckboxInput, IAccount, IStageConfigProps, StageConfigField } from '@spinnaker/core';
+import type { IAccount, IStageConfigProps } from '@spinnaker/core';
+import { AccountService, CheckboxInput, StageConfigField } from '@spinnaker/core';
 import { ManifestBasicSettings } from '@spinnaker/kubernetes';
 import { TerraformInnerJobConfig } from './terraformInnerJobConfig';
 

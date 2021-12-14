@@ -1,19 +1,19 @@
 import { capitalize, map } from 'lodash';
 import React from 'react';
-import Select, { Option } from 'react-select';
+import type { Option } from 'react-select';
+import Select from 'react-select';
 
+import type { IArtifact, IExpectedArtifact, IStageConfigProps } from '@spinnaker/core';
 import {
   ArtifactTypePatterns,
-  IArtifact,
-  IExpectedArtifact,
-  IStageConfigProps,
   RadioButtonInput,
   StageArtifactSelector,
   StageConfigField,
   yamlDocumentsToString,
   YamlEditor,
 } from '@spinnaker/core';
-import { IManifestBindArtifact, ManifestBindArtifactsSelector, ManifestSource } from '@spinnaker/kubernetes';
+import type { IManifestBindArtifact } from '@spinnaker/kubernetes';
+import { ManifestBindArtifactsSelector, ManifestSource } from '@spinnaker/kubernetes';
 
 export interface ITerraformInnerJobConfigProps extends IStageConfigProps {
   innerJobName: string;

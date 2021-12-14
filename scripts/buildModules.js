@@ -32,7 +32,7 @@ async function buildModules() {
       ].map((module) => runYarnBuild(`${PACKAGES_ROOT}/${module}`)),
     );
 
-    await Promise.all(['ecs', 'titus'].map((module) => runYarnBuild(`${PACKAGES_ROOT}/${module}`)));
+    await Promise.all(['ecs', 'titus', 'coveo'].map((module) => runYarnBuild(`${PACKAGES_ROOT}/${module}`)));
   } catch (err) {
     console.log(err.stdout);
     console.error(err.stderr);
