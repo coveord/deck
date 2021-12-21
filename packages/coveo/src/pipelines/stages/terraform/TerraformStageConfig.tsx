@@ -1,9 +1,25 @@
+/*
+ * Copyright 2021 Coveo Solutions Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import React from 'react';
 
 import type { IAccount, IStageConfigProps } from '@spinnaker/core';
 import { AccountService, CheckboxInput, StageConfigField } from '@spinnaker/core';
 import { ManifestBasicSettings } from '@spinnaker/kubernetes';
-import { TerraformInnerJobConfig } from './terraformInnerJobConfig';
+import { TerraformInnerJobConfig } from './TerraformInnerJobConfig';
 
 export interface ITerraformStageConfigState {
   credentials: IAccount[];
@@ -39,7 +55,7 @@ export class TerraformStageConfig extends React.Component<IStageConfigProps> {
   };
 
   private onAutoApprovedChanged = (isAutoApproved: boolean) => {
-    this.props.updateStageField({ autoApproved: isAutoApproved });
+    this.props.updateStageField({ isAutoApproved });
   };
 
   public render(): React.ReactNode {
@@ -56,7 +72,7 @@ export class TerraformStageConfig extends React.Component<IStageConfigProps> {
         />
         <StageConfigField label="Don't require approval" helpKey="coveo.terraform.autoapproved">
           <CheckboxInput
-            checked={stage.autoApproved}
+            checked={stage.isAutoApproved}
             onChange={(e: any) => this.onAutoApprovedChanged(e.target.checked)}
           />
         </StageConfigField>

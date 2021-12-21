@@ -1,3 +1,19 @@
+/*
+ * Copyright 2021 Coveo Solutions Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { capitalize, map } from 'lodash';
 import React from 'react';
 import type { Option } from 'react-select';
@@ -47,7 +63,7 @@ export class TerraformInnerJobConfig extends React.Component<ITerraformInnerJobC
 
   private initializeManifestState() {
     const { stage, innerJobName } = this.props;
-    const manifest = stage?.innerJobs?.[innerJobName]?.manifest;
+    const manifest = stage[innerJobName]?.manifest;
 
     if (manifest != null) {
       this.setState({ textManifest: yamlDocumentsToString([manifest]) });
@@ -56,7 +72,7 @@ export class TerraformInnerJobConfig extends React.Component<ITerraformInnerJobC
 
   private initializeDefaultValue() {
     const { stage, innerJobName } = this.props;
-    const manifestSource = stage.innerJobs?.[innerJobName]?.source;
+    const manifestSource = stage[innerJobName]?.source;
     if (!manifestSource) {
       this.updateInnerJob({ source: ManifestSource.TEXT });
     }
@@ -64,7 +80,7 @@ export class TerraformInnerJobConfig extends React.Component<ITerraformInnerJobC
 
   private getRequiredArtifacts(): IManifestBindArtifact[] {
     const { innerJobName, stage } = this.props;
-    const { requiredArtifactIds, requiredArtifacts } = stage?.innerJobs?.[innerJobName] ?? {};
+    const { requiredArtifactIds, requiredArtifacts } = stage[innerJobName] ?? {};
 
     return (requiredArtifactIds || [])
       .map((id: string) => ({ expectedArtifactId: id }))
@@ -132,22 +148,17 @@ export class TerraformInnerJobConfig extends React.Component<ITerraformInnerJobC
   private updateInnerJob = (changes: { [key: string]: any }) => {
     const { stage, innerJobName, updateStageField } = this.props;
 
-    // Handle the case where the innerJobs structure doesn't exist yet
-    const innerJobs = stage.innerJobs ?? {};
-    if (!innerJobs?.[innerJobName]) {
-      innerJobs[innerJobName] = {};
-    }
-
+    const innerJob = stage[innerJobName] ?? {};
     Object.entries(changes).forEach(([key, value]) => {
-      innerJobs[innerJobName][key] = value;
+      innerJob[key] = value;
     });
 
-    updateStageField({ innerJobs });
+    updateStageField({ [innerJobName]: innerJob });
   };
 
   public render(): React.ReactNode {
     const { stage, pipeline, innerJobName } = this.props;
-    const innerJob = stage.innerJobs?.[innerJobName];
+    const innerJob = stage[innerJobName];
 
     return (
       <>
