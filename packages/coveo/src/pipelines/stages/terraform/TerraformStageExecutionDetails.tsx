@@ -14,41 +14,31 @@
  * limitations under the License.
  */
 
-import { get, isEmpty, sortBy } from 'lodash';
 import React from 'react';
 
-import type { IExecutionDetailsSectionProps, IJobOwnedPodStatus } from '@spinnaker/core';
-import {
-  AccountTag,
-  DefaultPodNameProvider,
-  ExecutionDetailsSection,
-  JobStageExecutionLogs,
-  StageFailureMessage,
-} from '@spinnaker/core';
+import type { IExecutionDetailsSectionProps } from '@spinnaker/core';
+import { AccountTag, ExecutionDetailsSection } from '@spinnaker/core';
+
+import { TerraformInnerJob } from './TerraformInnerJob';
+import { TerraformStageExecutionModal } from './TerraformStageExecutionModal';
+import { InnerJobInfoProvider } from '../../../manifest/InnerJobPodInfoProvider';
 
 export class TerraformStageExecutionDetails extends React.Component<IExecutionDetailsSectionProps, any> {
-  public static title = 'runJobConfig';
-
-  private createdPodNames(podsStatuses: IJobOwnedPodStatus[]): string[] {
-    const sorted = sortBy(podsStatuses, (p: IJobOwnedPodStatus) => p.status.startTime);
-    return sorted.map((p: IJobOwnedPodStatus) => p.name);
-  }
+  public static title = 'Terraform execution';
 
   public render() {
     const { stage, name, current } = this.props;
     const { context } = stage;
-    const namespace = get(stage, ['context', 'jobStatus', 'location'], '');
-    const deployedName = namespace ? get<string[]>(context, ['deploy.jobs', namespace])[0] : '';
-    const externalLink = get<string>(stage, ['context', 'execution', 'logs']);
-    const pods = get(stage.context, 'jobStatus.pods', []);
-    const podNames = !isEmpty(pods)
-      ? this.createdPodNames(pods)
-      : [get(stage, ['context', 'jobStatus', 'mostRecentPodName'], '')];
-    const podNamesProviders = podNames.map((p) => new DefaultPodNameProvider(p));
+    const account = context.account;
+
+    const planInfo = context[TerraformInnerJob.PLAN.toString()] ?? {};
+    const planInfoProvider = new InnerJobInfoProvider(TerraformInnerJob.PLAN, planInfo);
+    const applyInfo = context[TerraformInnerJob.APPLY.toString()] ?? {};
+    const applyInfoProvider = new InnerJobInfoProvider(TerraformInnerJob.APPLY, applyInfo);
 
     return (
       <ExecutionDetailsSection name={name} current={current}>
-        {stage.failureMessage && <StageFailureMessage stage={stage} message={stage.failureMessage} />}
+        {/*<StageFailureMessage stage={stage} message={stage.failureMessage} />*/}
         <div className="row">
           <div className="col-md-9">
             <dl className="dl-narrow dl-horizontal">
@@ -56,24 +46,18 @@ export class TerraformStageExecutionDetails extends React.Component<IExecutionDe
               <dd>
                 <AccountTag account={context.account} />
               </dd>
-              {namespace && (
-                <>
-                  <dt>Namespace</dt>
-                  <dd>{stage.context.jobStatus.location}</dd>
-                  <dt>Logs</dt>
-                  <dd>
-                    <JobStageExecutionLogs
-                      deployedName={deployedName}
-                      account={this.props.stage.context.account}
-                      location={namespace}
-                      application={this.props.application}
-                      externalLink={externalLink}
-                      podNamesProviders={podNamesProviders}
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="well alert alert-info">
+                    <TerraformStageExecutionModal
+                      account={account}
+                      planInfo={planInfoProvider}
+                      applyInfo={applyInfoProvider}
+                      linkName="Execution details"
                     />
-                  </dd>
-                </>
-              )}
-              {!namespace && <div className="well">Collecting additional details...</div>}
+                  </div>
+                </div>
+              </div>
             </dl>
           </div>
         </div>

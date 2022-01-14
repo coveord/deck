@@ -121,7 +121,7 @@ export class JobManifestPodLogs extends React.Component<IJobManifestPodLogsProps
                   <ul className="tabs-basic console-output-tabs">
                     {containerLogs.map((log, i) => (
                       <li
-                        key={`${log.name}-${i + 1}}`}
+                        key={`${log.name}`}
                         className={classNames('console-output-tab', {
                           selected: log.name === selectedContainerLog.name,
                         })}
