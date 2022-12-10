@@ -1,4 +1,10 @@
-import { IAmazonLaunchTemplate, IIamInstanceProfile, IMetadataOptions, ILaunchTemplateData } from '@spinnaker/amazon';
+import type {
+  IAmazonLaunchTemplate,
+  IIamInstanceProfile,
+  ILaunchTemplateData,
+  IMetadataOptions,
+} from '@spinnaker/amazon';
+
 import { createMockBlockDeviceMapping } from './mockAmazonBlockDeviceMapping';
 
 export const mockIamInstanceProfile: IIamInstanceProfile = {
@@ -7,7 +13,7 @@ export const mockIamInstanceProfile: IIamInstanceProfile = {
 
 export const mockMetadataOptions: IMetadataOptions = {
   httpEndpoint: 'enabled',
-  httpsTokens: 'required',
+  httpTokens: 'required',
 };
 
 export const mockLaunchTemplateData: ILaunchTemplateData = {

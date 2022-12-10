@@ -12,9 +12,17 @@ The minimum versions for each are listed in package.json.
 Run the following commands (in the deck directory) to get all dependencies installed in deck and to start the server:
 
 - `yarn`
+- `yarn modules`
 - `yarn start`
 
 The app will start up on localhost:9000.
+
+When editing `core` or any other cloud provider package, please run the following in that folder
+
+- `yarn dev`
+
+If your local dev setup ends up in a corrupt state with missing npm modules, please run `yarn fixup` from deck and that
+should reset your state.
 
 ## Environment variables
 
@@ -45,8 +53,13 @@ API_HOST=http://localhost:8084 yarn start
 
 ## Building &amp; Deploying
 
-To build the application, run `yarn build`.
+To build the application, run `yarn modules && yarn build`.
 The built application lives in `build/`.
+
+## Graphql
+
+the `core` package is using graphql queries and mutation to interact with the backend (currently, only the `managed` components).
+To generate the TS types and the Apollo hooks, run `yarn graphql:generate` from `core`.
 
 ## Conventions
 
@@ -55,7 +68,7 @@ It's a work in progress, but please try to follow the [conventions here](https:/
 ## Customizing the UI
 
 It's certainly doable - we're in the middle of some significant changes to our build process, which should make it easier.
-For now, you can look at the [all modules](https://github.com/spinnaker/deck/tree/master/app/scripts/modules/) to
+For now, you can look at the [all modules](https://github.com/spinnaker/deck/tree/master/packages/) to
 get an idea how we are customizing Deck internally. Expect a lot of this to change, though, as we figure out better, cleaner
 hooks and integration points. And we're happy to provide new integration points (or accept pull requests) following
 those existing conventions if you need an integration point that doesn't already exist.
