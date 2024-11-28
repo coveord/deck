@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/spinnaker/deck/compare/@spinnaker/appengine@0.1.12...@spinnaker/appengine@0.1.13) (2024-06-10)
+
+**Note:** Version bump only for package @spinnaker/appengine
+
+
+
+
+
+## [0.1.12](https://github.com/spinnaker/deck/compare/@spinnaker/appengine@0.1.11...@spinnaker/appengine@0.1.12) (2024-05-10)
+
+**Note:** Version bump only for package @spinnaker/appengine
+
+
+
+
+
+## [0.1.11](https://github.com/spinnaker/deck/compare/@spinnaker/appengine@0.1.10...@spinnaker/appengine@0.1.11) (2023-12-07)
+
+**Note:** Version bump only for package @spinnaker/appengine
+
+
+
+
+
+## [0.1.10](https://github.com/spinnaker/deck/compare/@spinnaker/appengine@0.1.9...@spinnaker/appengine@0.1.10) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.1.9](https://github.com/spinnaker/deck/compare/@spinnaker/appengine@0.1.8...@spinnaker/appengine@0.1.9) (2023-09-06)
 
 **Note:** Version bump only for package @spinnaker/appengine

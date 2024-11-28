@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.14](https://github.com/spinnaker/deck/compare/@spinnaker/google@0.2.13...@spinnaker/google@0.2.14) (2024-06-10)
+
+**Note:** Version bump only for package @spinnaker/google
+
+
+
+
+
+## [0.2.13](https://github.com/spinnaker/deck/compare/@spinnaker/google@0.2.12...@spinnaker/google@0.2.13) (2024-05-10)
+
+**Note:** Version bump only for package @spinnaker/google
+
+
+
+
+
+## [0.2.12](https://github.com/spinnaker/deck/compare/@spinnaker/google@0.2.11...@spinnaker/google@0.2.12) (2023-12-07)
+
+**Note:** Version bump only for package @spinnaker/google
+
+
+
+
+
+## [0.2.11](https://github.com/spinnaker/deck/compare/@spinnaker/google@0.2.10...@spinnaker/google@0.2.11) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.2.10](https://github.com/spinnaker/deck/compare/@spinnaker/google@0.2.9...@spinnaker/google@0.2.10) (2023-09-06)
 
 **Note:** Version bump only for package @spinnaker/google

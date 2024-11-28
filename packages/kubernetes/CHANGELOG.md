@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/spinnaker/deck/compare/@spinnaker/kubernetes@0.6.1...@spinnaker/kubernetes@0.6.2) (2024-06-10)
+
+**Note:** Version bump only for package @spinnaker/kubernetes
+
+
+
+
+
+## [0.6.1](https://github.com/spinnaker/deck/compare/@spinnaker/kubernetes@0.6.0...@spinnaker/kubernetes@0.6.1) (2024-05-10)
+
+**Note:** Version bump only for package @spinnaker/kubernetes
+
+
+
+
+
+# [0.6.0](https://github.com/spinnaker/deck/compare/@spinnaker/kubernetes@0.5.2...@spinnaker/kubernetes@0.6.0) (2023-12-07)
+
+
+### Features
+
+* Add feature flag for multi block failure messages. ([#10061](https://github.com/spinnaker/deck/issues/10061)) ([374f724](https://github.com/spinnaker/deck/commit/374f724de221d68030a86e1f6452e3303390339a))
+* Split deployment failure messages. ([#10060](https://github.com/spinnaker/deck/issues/10060)) ([73dda48](https://github.com/spinnaker/deck/commit/73dda48caccd969ef562af3f86bc1f17efbdad7f))
+
+
+
+
+
+## [0.5.2](https://github.com/spinnaker/deck/compare/@spinnaker/kubernetes@0.5.1...@spinnaker/kubernetes@0.5.2) (2023-10-16)
+
+
+### Bug Fixes
+
+* **kubernetes:** export rollout restart stage so it's actually available for use ([#10037](https://github.com/spinnaker/deck/issues/10037)) ([c19f9ce](https://github.com/spinnaker/deck/commit/c19f9ce9ca411fe16e865d3d3121d497bce93575))
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.5.1](https://github.com/spinnaker/deck/compare/@spinnaker/kubernetes@0.5.0...@spinnaker/kubernetes@0.5.1) (2023-09-06)
 
 **Note:** Version bump only for package @spinnaker/kubernetes

@@ -104,7 +104,9 @@ angular
           }
         });
         const localSSDDisks = disks.filter((disk) => disk.type === 'local-ssd');
-        const persistentDisks = disks.filter((disk) => disk.type.startsWith('pd-'));
+        const persistentDisks = disks.filter(
+          (disk) => disk.type.startsWith('pd-') || disk.type.startsWith('hyperdisk-'),
+        );
 
         if (persistentDisks.length) {
           command.disks = persistentDisks.concat(localSSDDisks);
@@ -149,7 +151,9 @@ angular
       }
 
       function getPersistentDisks(command) {
-        return (command.disks || []).filter((disk) => disk.type.startsWith('pd-'));
+        return (command.disks || []).filter(
+          (disk) => disk.type.startsWith('pd-') || disk.type.startsWith('hyperdisk-'),
+        );
       }
 
       function calculatePersistentDiskOverriddenStorageDescription(command) {
@@ -285,6 +289,18 @@ angular
         }
       }
 
+      function populateResourceManagerTags(instanceTemplateResourceManagerTags, command) {
+        if (instanceTemplateResourceManagerTags) {
+          Object.assign(command.resourceManagerTags, instanceTemplateResourceManagerTags);
+        }
+      }
+
+      function populatePartnerMetadata(instanceTemplatePartnerMetadata, command) {
+        if (instanceTemplatePartnerMetadata) {
+          Object.assign(command.partnerMetadata, instanceTemplatePartnerMetadata);
+        }
+      }
+
       function populateLabels(instanceTemplateLabels, command) {
         if (instanceTemplateLabels) {
           Object.assign(command.labels, instanceTemplateLabels);
@@ -363,6 +379,8 @@ angular
           instanceMetadata: {},
           tags: [],
           labels: {},
+          resourceManagerTags: {},
+          partnerMetadata: {},
           enableSecureBoot: false,
           enableVtpm: false,
           enableIntegrityMonitoring: false,
@@ -441,6 +459,8 @@ angular
           instanceMetadata: {},
           tags: [],
           labels: {},
+          resourceManagerTags: {},
+          partnerMetadata: {},
           availabilityZones: [],
           enableSecureBoot: serverGroup.enableSecureBoot,
           enableVtpm: serverGroup.enableVtpm,
@@ -573,6 +593,12 @@ angular
               const instanceTemplateTags = { items: extendedCommand.tags };
               extendedCommand.tags = [];
               populateTags(instanceTemplateTags, extendedCommand);
+
+              const resourceManagerTags = extendedCommand.resourceManagerTags;
+              populateResourceManagerTags(resourceManagerTags, extendedCommand);
+
+              const partnerMetadata = extendedCommand.partnerMetadata;
+              populatePartnerMetadata(partnerMetadata, extendedCommand);
 
               return extendedCommand;
             });

@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.29.0...@spinnaker/core@0.29.1) (2024-06-10)
+
+
+### Bug Fixes
+
+* **redblack:** fixing redblack onchange values ([#10107](https://github.com/spinnaker/deck/issues/10107)) ([443408e](https://github.com/spinnaker/deck/commit/443408e7f6404b10d195b146f2f68fe926c2413a))
+
+
+
+
+
+# [0.29.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.28.0...@spinnaker/core@0.29.0) (2024-05-10)
+
+
+### Bug Fixes
+
+* **lambdaStages:** Exporting Lambda stages based on the feature flag settings ([#10085](https://github.com/spinnaker/deck/issues/10085)) ([93bab65](https://github.com/spinnaker/deck/commit/93bab656555fabd539e186587a40dd8a0358dbd9))
+* **pipelineGraph:** Handling exception when requisiteStageRefIds is not defined ([#10086](https://github.com/spinnaker/deck/issues/10086)) ([4e1635d](https://github.com/spinnaker/deck/commit/4e1635d6026c6fbcb5912de1859c45038fd1258a))
+* **pipeline:** Handle render/validation when stageTimeoutMs is a Spel expression ([#10103](https://github.com/spinnaker/deck/issues/10103)) ([9237f78](https://github.com/spinnaker/deck/commit/9237f7890e5f02f5369bc91984de98b18591ef9e))
+* **runJobs:** Persist External Log links after the deletion of the pods ([#10081](https://github.com/spinnaker/deck/issues/10081)) ([fd55cf1](https://github.com/spinnaker/deck/commit/fd55cf1fb3bca08b931a10bb4c10d65393a20c73))
+
+
+### Features
+
+* **cdevents-notification:** CDEvents notification to produce CDEvents ([#9997](https://github.com/spinnaker/deck/issues/9997)) ([fc96adb](https://github.com/spinnaker/deck/commit/fc96adb17b5051f655e1d651b28c8eb0efd7e11e))
+* **taskView:** Implement opt-in paginated request for TaskView ([#10093](https://github.com/spinnaker/deck/issues/10093)) ([5fa1e96](https://github.com/spinnaker/deck/commit/5fa1e96b90c7398338d67ef7a7337ee3628591bd))
+* **wait-stage:** Make Wait Stage restartable. ([#10073](https://github.com/spinnaker/deck/issues/10073)) ([f3df056](https://github.com/spinnaker/deck/commit/f3df0561d891e928a14c32a3544fc331ebf1d981))
+
+
+
+
+
+# [0.28.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.27.0...@spinnaker/core@0.28.0) (2023-12-07)
+
+
+### Features
+
+* Add feature flag for multi block failure messages. ([#10061](https://github.com/spinnaker/deck/issues/10061)) ([374f724](https://github.com/spinnaker/deck/commit/374f724de221d68030a86e1f6452e3303390339a))
+* Expose spinnaker/kayenta to the plugin framework to allow us to create kayenta plugins in Deck ([#10072](https://github.com/spinnaker/deck/issues/10072)) ([dbf0574](https://github.com/spinnaker/deck/commit/dbf0574176cbbca781d970c64dfe49f6911ef8b8))
+* Split deployment failure messages. ([#10060](https://github.com/spinnaker/deck/issues/10060)) ([73dda48](https://github.com/spinnaker/deck/commit/73dda48caccd969ef562af3f86bc1f17efbdad7f))
+
+
+
+
+
+# [0.27.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.26.0...@spinnaker/core@0.27.0) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+### Features
+
+* **helm/bake:** Add additional input fields where we can fill in details of the APIs versions ([#10036](https://github.com/spinnaker/deck/issues/10036)) ([d968183](https://github.com/spinnaker/deck/commit/d9681830244ecd1c70cc02459f148d0822b7187e))
+
+
+
+
+
 # [0.26.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.25.0...@spinnaker/core@0.26.0) (2023-09-06)
 
 

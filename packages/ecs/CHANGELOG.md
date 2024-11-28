@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/spinnaker/deck/compare/@spinnaker/ecs@0.1.0...@spinnaker/ecs@0.1.1) (2024-06-10)
+
+**Note:** Version bump only for package @spinnaker/ecs
+
+
+
+
+
+# [0.1.0](https://github.com/spinnaker/deck/compare/@spinnaker/ecs@0.0.364...@spinnaker/ecs@0.1.0) (2024-05-10)
+
+
+### Features
+
+* **ecs:** Add support for ECS deployment circuit breaker ([#10076](https://github.com/spinnaker/deck/issues/10076)) ([32dfea8](https://github.com/spinnaker/deck/commit/32dfea87b69790d1093dac495f98a33fe73c5067))
+
+
+
+
+
+## [0.0.364](https://github.com/spinnaker/deck/compare/@spinnaker/ecs@0.0.363...@spinnaker/ecs@0.0.364) (2023-12-07)
+
+**Note:** Version bump only for package @spinnaker/ecs
+
+
+
+
+
+## [0.0.363](https://github.com/spinnaker/deck/compare/@spinnaker/ecs@0.0.362...@spinnaker/ecs@0.0.363) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.0.362](https://github.com/spinnaker/deck/compare/@spinnaker/ecs@0.0.361...@spinnaker/ecs@0.0.362) (2023-09-06)
 
 

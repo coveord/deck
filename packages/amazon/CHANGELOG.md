@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.5](https://github.com/spinnaker/deck/compare/@spinnaker/amazon@0.14.4...@spinnaker/amazon@0.14.5) (2024-06-10)
+
+
+### Bug Fixes
+
+* **lambda:** Export LambdaRoute stage on aws module ([#10116](https://github.com/spinnaker/deck/issues/10116)) ([1f6d2c1](https://github.com/spinnaker/deck/commit/1f6d2c1a69bfae5fd8b6bb9f5fbf0b7fb86930d3))
+
+
+
+
+
+## [0.14.4](https://github.com/spinnaker/deck/compare/@spinnaker/amazon@0.14.3...@spinnaker/amazon@0.14.4) (2024-05-10)
+
+
+### Bug Fixes
+
+* **lambda:** Invoke stage excludedArtifactTypes not including the embedded-artifact type ([#10097](https://github.com/spinnaker/deck/issues/10097)) ([9374f06](https://github.com/spinnaker/deck/commit/9374f0630afb6a174bacf64e9f2ced750bbf4f1d))
+* **lambdaStages:** Exporting Lambda stages based on the feature flag settings ([#10085](https://github.com/spinnaker/deck/issues/10085)) ([93bab65](https://github.com/spinnaker/deck/commit/93bab656555fabd539e186587a40dd8a0358dbd9))
+
+
+
+
+
+## [0.14.3](https://github.com/spinnaker/deck/compare/@spinnaker/amazon@0.14.2...@spinnaker/amazon@0.14.3) (2023-12-07)
+
+
+### Bug Fixes
+
+* **amazon:** Allow scaling bounds to use floats between input steps ([#10059](https://github.com/spinnaker/deck/issues/10059)) ([5c1ebfd](https://github.com/spinnaker/deck/commit/5c1ebfdf924e73aa6877943cb008c216177b8256))
+* **lambda:** available Runtimes shared between Deploy stage and Functions tab ([#10050](https://github.com/spinnaker/deck/issues/10050)) ([889d769](https://github.com/spinnaker/deck/commit/889d769c600e298917ec2471cd88a4bdd808ed91))
+
+
+
+
+
+## [0.14.2](https://github.com/spinnaker/deck/compare/@spinnaker/amazon@0.14.1...@spinnaker/amazon@0.14.2) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.14.1](https://github.com/spinnaker/deck/compare/@spinnaker/amazon@0.14.0...@spinnaker/amazon@0.14.1) (2023-09-06)
 
 

@@ -21,6 +21,7 @@ export interface INotificationSettings {
   pubsub: { enabled: boolean };
   slack: { botName: string; enabled: boolean };
   sms: { enabled: boolean };
+  cdevents: { enabled: boolean };
 }
 
 export interface IFeatures {
@@ -39,6 +40,7 @@ export interface IFeatures {
   mdGitIntegration?: boolean;
   managedServiceAccounts?: boolean;
   managedResources?: boolean;
+  multiBlockFailureMessages?: boolean;
   notifications?: boolean;
   pagerDuty?: boolean;
   pipelines?: boolean;
@@ -51,6 +53,7 @@ export interface IFeatures {
   functions?: boolean;
   kubernetesRawResources?: boolean;
   renderPipelineStageThreshold?: number;
+  deployManifestStageAdvancedConfiguration?: boolean;
 }
 
 export interface IDockerInsightSettings {
@@ -125,6 +128,7 @@ export interface ISpinnakerSettings {
     manifestBasePath: string;
     urls?: Partial<IManagedDeliveryURLs>;
   };
+  maxFetchHistoryOnEvaluateVariables?: number;
   maxPipelineAgeDays: number;
   newApplicationDefaults: INewApplicationDefaults;
   notifications: INotificationSettings;
@@ -140,6 +144,7 @@ export interface ISpinnakerSettings {
   };
   stashTriggerInfo?: string;
   pollSchedule: number;
+  tasksViewLimitPerPage: number;
   providers?: {
     [key: string]: IProviderSettings; // allows custom providers not typed in here (good for testing too)
   };
@@ -151,6 +156,10 @@ export interface ISpinnakerSettings {
   useClassicFirewallLabels: boolean;
   kubernetesAdHocInfraWritesEnabled: boolean;
   changelogUrl: string;
+  cdevents?: {
+    validUrlPattern: string;
+    validCDEvent: string;
+  };
 }
 
 export const SETTINGS: ISpinnakerSettings = (window as any).spinnakerSettings || {};
@@ -168,6 +177,7 @@ SETTINGS.managedDelivery = SETTINGS.managedDelivery || {
   defaultManifest: 'spinnaker.yml',
   manifestBasePath: '.spinnaker',
 };
+SETTINGS.maxFetchHistoryOnEvaluateVariables = SETTINGS.maxFetchHistoryOnEvaluateVariables ?? 100;
 
 // A helper to make resetting settings to steady state after running tests easier
 const originalSettings: ISpinnakerSettings = cloneDeep(SETTINGS);

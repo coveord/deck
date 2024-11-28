@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.78](https://github.com/spinnaker/deck/compare/@spinnaker/huaweicloud@0.0.77...@spinnaker/huaweicloud@0.0.78) (2024-06-10)
+
+**Note:** Version bump only for package @spinnaker/huaweicloud
+
+
+
+
+
+## [0.0.77](https://github.com/spinnaker/deck/compare/@spinnaker/huaweicloud@0.0.76...@spinnaker/huaweicloud@0.0.77) (2024-05-10)
+
+**Note:** Version bump only for package @spinnaker/huaweicloud
+
+
+
+
+
+## [0.0.76](https://github.com/spinnaker/deck/compare/@spinnaker/huaweicloud@0.0.75...@spinnaker/huaweicloud@0.0.76) (2023-12-07)
+
+**Note:** Version bump only for package @spinnaker/huaweicloud
+
+
+
+
+
+## [0.0.75](https://github.com/spinnaker/deck/compare/@spinnaker/huaweicloud@0.0.74...@spinnaker/huaweicloud@0.0.75) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 ## [0.0.74](https://github.com/spinnaker/deck/compare/@spinnaker/huaweicloud@0.0.73...@spinnaker/huaweicloud@0.0.74) (2023-09-06)
 
 **Note:** Version bump only for package @spinnaker/huaweicloud

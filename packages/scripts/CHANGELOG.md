@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/spinnaker/deck/compare/@spinnaker/scripts@0.3.1...@spinnaker/scripts@0.4.0) (2023-12-07)
+
+
+### Features
+
+* Expose spinnaker/kayenta to the plugin framework to allow us to create kayenta plugins in Deck ([#10072](https://github.com/spinnaker/deck/issues/10072)) ([dbf0574](https://github.com/spinnaker/deck/commit/dbf0574176cbbca781d970c64dfe49f6911ef8b8))
+
+
+
+
+
+## [0.3.1](https://github.com/spinnaker/deck/compare/@spinnaker/scripts@0.3.0...@spinnaker/scripts@0.3.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* **publish:** set access config in deck libraries ([#10049](https://github.com/spinnaker/deck/issues/10049)) ([2a5ebe2](https://github.com/spinnaker/deck/commit/2a5ebe25662eeb9d41b5071749266bf9d6d51104))
+
+
+
+
+
 # [0.3.0](https://github.com/spinnaker/deck/compare/@spinnaker/scripts@0.2.5...@spinnaker/scripts@0.3.0) (2022-08-03)
 
 
