@@ -21,7 +21,7 @@ node {
     yarnVersion = packageJson.engines.yarn.replaceAll(/[^\d\.]/, '')
 
     // Enabled the automatic download. False is the default (for now).
-    download = true
+    download = false
 }
 
 task modules(type: YarnTask) {
