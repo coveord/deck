@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 import { StageConfigWrapper } from './StageConfigWrapper';
 import { STAGE_NAME } from './StageName';
 import { AccountService } from '../../../account/AccountService';
+import { CORE_PIPELINE_CONFIG_STAGES_ALLOWIGNOREFAILURE_ALLOWIGNOREFAILURE_DIRECTIVE } from './allowIgnoreFailure/allowIgnoreFailure.directive';
 import { REST } from '../../../api';
 import { ApplicationReader } from '../../../application/service/ApplicationReader';
 import { EditStageJsonModal } from './common/EditStageJsonModal';
@@ -16,7 +17,6 @@ import { BASE_EXECUTION_DETAILS_CTRL } from './common/baseExecutionDetails.contr
 import { CORE_PIPELINE_CONFIG_STAGES_COMMON_STAGECONFIGFIELD_STAGECONFIGFIELD_DIRECTIVE } from './common/stageConfigField/stageConfigField.directive';
 import { ConfirmationModalService } from '../../../confirmationModal';
 import { CORE_PIPELINE_CONFIG_STAGES_FAILONFAILEDEXPRESSIONS_FAILONFAILEDEXPRESSIONS_DIRECTIVE } from './failOnFailedExpressions/failOnFailedExpressions.directive';
-import { CORE_PIPELINE_CONFIG_STAGES_ALLOWIGNOREFAILURE_ALLOWIGNOREFAILURE_DIRECTIVE } from './allowIgnoreFailure/allowIgnoreFailure.directive';
 import { CORE_PIPELINE_CONFIG_STAGES_OPTIONALSTAGE_OPTIONALSTAGE_DIRECTIVE } from './optionalStage/optionalStage.directive';
 import { OVERRRIDE_FAILURE } from './overrideFailure/overrideFailure.module';
 import { OVERRIDE_TIMEOUT_COMPONENT } from './overrideTimeout/overrideTimeout.module';
@@ -36,7 +36,7 @@ module(CORE_PIPELINE_CONFIG_STAGES_STAGE_MODULE, [
   CORE_PIPELINE_CONFIG_STAGES_OPTIONALSTAGE_OPTIONALSTAGE_DIRECTIVE,
   CORE_PIPELINE_CONFIG_STAGES_FAILONFAILEDEXPRESSIONS_FAILONFAILEDEXPRESSIONS_DIRECTIVE,
   CORE_PIPELINE_CONFIG_STAGES_COMMON_STAGECONFIGFIELD_STAGECONFIGFIELD_DIRECTIVE,
-  CORE_PIPELINE_CONFIG_STAGES_ALLOWIGNOREFAILURE_ALLOWIGNOREFAILURE_DIRECTIVE
+  CORE_PIPELINE_CONFIG_STAGES_ALLOWIGNOREFAILURE_ALLOWIGNOREFAILURE_DIRECTIVE,
 ])
   .directive('pipelineConfigStage', function () {
     return {
